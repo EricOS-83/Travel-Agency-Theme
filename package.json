@@ -1,0 +1,17 @@
+{
+  "name": "travel-agency-theme",
+  "version": "1.0.0",
+  "description": "1st attempt to create a travel agency theme using html, css, javascript, node.js",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7"
+  }
+}
