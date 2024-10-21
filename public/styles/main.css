@@ -1,0 +1,104 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar container */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    position: relative;
+}
+
+/* Logo at the left */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Centered menu links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #f4b400;
+}
+
+/* Login icon at the right */
+.login-icon {
+    font-size: 24px;
+
+    padding-right: 10px;
+
+    border-radius: 50%;
+    cursor: pointer;
+
+    right: 30%;
+    
+}
+
+/* Hamburger Menu (Hidden by default) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+/* Media Queries for mobile responsiveness */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background-color: #333;
+    }
+
+    .nav-links.active {
+        display: flex;
+        padding: 20px;
+        margin-top: -20px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Ensure the login icon stays on the top right in smaller screens */
+    .login-icon {
+        right: 50px;
+        top: 10px;
+        position: absolute;
+        z-index: 1000; /* Keeps the login button on top of everything */
+    }
+}
