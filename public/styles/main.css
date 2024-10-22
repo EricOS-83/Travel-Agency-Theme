@@ -1,104 +1,55 @@
-/* Basic reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-}
-
-/* Navbar container */
-nav {
+.container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    position: relative;
 }
 
-/* Logo at the left */
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-/* Centered menu links */
-.nav-links {
-    list-style: none;
+.nav ul {
     display: flex;
-    gap: 20px;
+    list-style: none;
 }
 
-.nav-links li a {
-    color: white;
+.nav-link {
+    margin-right: 20px;
+    position: relative; /* Ensures ::before is relative to the link */
+}
+
+.nav-link a {
     text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s;
+    color: #000;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
 }
 
-.nav-links li a:hover {
-    color: #f4b400;
+.nav-link i {
+    margin-right: 8px;
 }
 
-/* Login icon at the right */
-.login-icon {
-    font-size: 24px;
-
-    padding-right: 10px;
-
-    border-radius: 50%;
-    cursor: pointer;
-
-    right: 30%;
-    
+.nav-but {
+    padding: 10px 20px;
+    background-color: #f7c631;
+    color: white;
+    border: none;
+    border-radius: 5px;
 }
 
-/* Hamburger Menu (Hidden by default) */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
+.nav-link:hover a {
+    opacity: 0.8; /* Slight fade effect on hover */
 }
 
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: white;
+.nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Adjust position just below the link text */
+    left: 0;
+    height: 2px; /* Set height for underline */
+    width: 0%;
+    background-color: #f7c631; /* Color for underline */
+    transition: width 0.3s ease; /* Smooth transition */
 }
 
-/* Media Queries for mobile responsiveness */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        background-color: #333;
-    }
-
-    .nav-links.active {
-        display: flex;
-        padding: 20px;
-        margin-top: -20px;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    /* Ensure the login icon stays on the top right in smaller screens */
-    .login-icon {
-        right: 50px;
-        top: 10px;
-        position: absolute;
-        z-index: 1000; /* Keeps the login button on top of everything */
-    }
+.nav-link:hover::before {
+    width: 100%; /* Full width on hover */
 }
