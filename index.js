@@ -19,6 +19,8 @@ app.get('/', (req, res) => {
     res.render('index.ejs');  // Render index.ejs (you need to create this file in the views folder)
 });
 
+
+// Serve the login.ejs when the user accesses the login page
 app.get('/login', (req, res) => {
     res.render('login.ejs');  // Render login.ejs (you need to create this file in the views folder)
 });
