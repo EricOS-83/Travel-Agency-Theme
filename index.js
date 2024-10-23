@@ -19,6 +19,11 @@ app.get('/', (req, res) => {
     res.render('index.ejs');  // Render index.ejs (you need to create this file in the views folder)
 });
 
+app.get('/login', (req, res) => {
+    res.render('login.ejs');  // Render login.ejs (you need to create this file in the views folder)
+});
+
+
 // Start the server
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
