@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 
 
 // Serve the login.ejs when the user accesses the login page
-app.get('/login', (req, res) => {
+app.post('/login', (req, res) => {
     res.render('login.ejs');  // Render login.ejs (you need to create this file in the views folder)
 });
 
